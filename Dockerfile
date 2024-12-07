@@ -8,6 +8,6 @@ COPY ./app.py /app
 
 COPY ./requirements.txt /app
 
-RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
+RUN pip install --no-cache-dir --break-system-packages --upgrade -r /app/requirements.txt
 
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5000", "--proxy-headers"]
