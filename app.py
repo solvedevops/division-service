@@ -3,7 +3,7 @@ from pydantic import BaseModel
 import time
 import uuid
 from telemetry import create_telemetry_logger
-from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
+#from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 
 # Initialize telemetry
 telemetry = create_telemetry_logger("division-service")
@@ -82,7 +82,7 @@ app = FastAPI(
     description="Microservice for performing division operations",
     version="1.0.0"
 )
-FastAPIInstrumentor().instrument_app(app)
+#FastAPIInstrumentor().instrument_app(app)
 
 @app.get("/health", response_model=HealthCheck, tags=["health"])
 async def health_check():
